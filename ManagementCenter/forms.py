@@ -22,7 +22,7 @@ class DepartementForm(forms.ModelForm):
 class GroupForm(forms.ModelForm):
     class Meta:
         model   = Group
-        fields  = ('name','UserManager')
+        fields  = ('name', 'departement', 'UserManager')
 
 class GroupAdminForm(forms.ModelForm):
     class Meta:

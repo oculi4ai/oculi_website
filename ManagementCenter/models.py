@@ -22,7 +22,8 @@ class Departement(models.Model):
 
 class Group(models.Model):
     name        = models.CharField(max_length=200)
-    UserManager = models.ForeignKey(Departement,  null=True, blank=True ,on_delete=models.CASCADE)
+    departement = models.ForeignKey(Departement,  null=True, blank=True ,on_delete=models.CASCADE)
+    UserManager = models.ForeignKey(User,  null=True, blank=True ,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

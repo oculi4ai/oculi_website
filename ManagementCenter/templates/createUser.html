@@ -1,17 +1,16 @@
-<form  method='POST'>
-    {% csrf_token %}
-    {{ form }}
+<form method='POST'>
+    {% csrf_token %} {{ message }} {{ form }}
     <input type="submit" />
     <button class='js-captcha-refresh'>CREATE</button>
 </form>
 <script>
-$('.js-captcha-refresh').click(function(){
-    $form = $(this).parents('form');
+    $('.js-captcha-refresh').click(function() {
+        $form = $(this).parents('form');
 
-    $.getJSON($(this).data('url'), {}, function(json) {
-        // This should update your captcha image src and captcha hidden input
+        $.getJSON($(this).data('url'), {}, function(json) {
+            // This should update your captcha image src and captcha hidden input
+        });
+
+        return false;
     });
-
-    return false;
-});
 </script>
