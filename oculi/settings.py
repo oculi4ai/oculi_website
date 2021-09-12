@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'phonenumber_field',
     'ManagementCenter',
-]
+    'captcha',
 
+
+]
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
